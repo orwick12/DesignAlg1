@@ -27,7 +27,7 @@ public class DesignAlg1 {
     
     
     
-    public int insertionSort(int [] input){
+    public static int insertionSort(int [] input){
         int x;
         for(int i = 1; i <= input.length; i++){
             for(int j = i; j>0; j--){
