@@ -21,33 +21,35 @@ public class DesignAlg1 {
      * 
      * and 
      * 
-     * http://www.java2novice.com/java-sorting-algorithms/insertion-sort/
+     * http://www.java2novice.com/java-interview-programs/insertion-sort/
      * 
      **/
-    
-    
-    
-    public static int insertionSort(int [] input){
-        int x;
-        for(int i = 1; i <= input.length; i++){
-            for(int j = i; j>0; j--){
-                if(input[j] < input[j-1]){
-                    x = input[j];
-                    input[j] = input[j-1];
-                    input[j-1] = x;
-                }
-            }    
-        }
-      return input;
-  }
+
     public static void main(String[] args) {
-        
-        //start with unsorted array
-        int[] unsorted = {4,2,8,3,8};
-        
-        //sort the unsorted in a new array
-        int[] sorted = insertionSort(unsorted);
-        
+
+        int[] unsorted = {2, 5, 3, 1, 8, };
+        insertionSort(unsorted);
     }
-    
+
+    private static void printNumbers(int[] input) {
+
+        for (int i = 0; i < input.length; i++) {
+           System.out.print(input[i] + ", ");
+        }
+        System.out.println("\n");
+    }
+
+    public static void insertionSort(int unsorted[]) {
+        
+        for (int j = 1; j < unsorted.length; j++) {
+           
+           int i = j-1;
+           while ( (i > -1) && ( unsorted [i] > unsorted[j] ) ) {
+               unsorted [i+1] = unsorted [i];
+               i--;
+           }
+           unsorted[i+1] = unsorted[j];
+           printNumbers(unsorted);
+        }
+    }
 }
