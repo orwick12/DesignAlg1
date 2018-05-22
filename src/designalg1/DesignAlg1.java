@@ -33,13 +33,13 @@ public class DesignAlg1 {
 
     private static void printNumbers(int[] input) {
 
-        for (int i = 0; i < input.length; i++) {
-           System.out.print(input[i] + ", ");
+        for (int anInput : input) {
+            System.out.print(anInput + ", ");
         }
         System.out.println("\n");
     }
 
-    public static void insertionSort(int unsorted[]) {
+    private static void insertionSort(int unsorted[]) {
         
         for (int j = 1; j < unsorted.length; j++) {
            
